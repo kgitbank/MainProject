@@ -1,0 +1,86 @@
+/*style.css
+/*표준 글꼴 서식 스타일*/
+h1{
+	font-size:44px;
+	font-family:a아메리카노B;
+	font-weight:bold;
+	color:red;
+	padding-bottom:15px;
+}
+h2{
+	font-size:26px;
+	font-family:a뉴굴림2;
+	color:white;
+	padding-top:25px;
+}
+h3{
+	font-size:18px;
+	font-family:a뉴굴림2;
+	color:white;
+	padding:6px;
+}
+h3.menu
+{
+	font-size:22px;
+	font-family:a옛날목욕탕L;
+	color:black;
+	padding:5px;
+}
+
+body, td, input, select, textarea, p, th{
+	font-size:17px;
+	font-family:a뉴굴림2;
+	color:black;
+	padding:5px;
+}
+
+/*표준 링크 스타일*/
+a:link{
+	color:#000000; text-decoration:none;
+	font-size:17px; font-family:a뉴굴림2;
+}
+a:visited{
+	color:#000000; text-decoration:none;
+	font-size:17px; font-family:a뉴굴림2;
+}
+a:hover{
+	color:#000000; text-decoration:none;
+	font-size:17px; font-family:a뉴굴림2;
+}
+a:link.topMenu{
+	color:#000000; text-decoration:none;
+	font-size:23px; font-family:a뉴굴림2;
+	padding-top:7px;
+}
+a:visited.topMenu{
+	color:#000000; text-decoration:none;
+	font-size:23px; font-family:a뉴굴림2;
+	padding-top:7px;
+}
+a:hover.topMenu{
+	color:#000000; text-decoration:none;
+	font-size:23px; font-family:a뉴굴림2;
+	padding-top:7px;
+}
+/*입력 양식 스타일 .은 class로 #은 id로*/
+.box{
+	border:1px solid navy;
+	padding-left:8px;
+}
+.outline{
+	border-top:4px double navy;
+	border-bottom:4px double navy;
+}
+.m1{
+background-color:#EAF0E8;
+border-bottom:1px dotted #9933CC;
+}
+.m2{
+background-color:#FFCC00;
+border-bottom:1px dotted #9933CC;
+}
+.m3{
+border-bottom:1px dotted navy;
+}
+
+

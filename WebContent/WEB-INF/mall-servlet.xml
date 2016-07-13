@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+		<property name="username" value="web10"/>
+		<property name="password" value="web10"/>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="cateDAO" class="admin.db.CateDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="prodDAO" class="admin.db.ProdDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="memberDAO" class="member.db.MemberDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="buyDAO" class="buy.db.BuyDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="recipeDAO" class="recipe.db.RecipeDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="saleDAO" class="sale.db.SaleDAOImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean class="admin.AdminController">
+		<property name="cateDAO" ref="cateDAO"/>
+		<property name="prodDAO" ref="prodDAO"/>
+	</bean>
+	<bean class="member.MemberController">
+		<property name="memberDAO" ref="memberDAO"/>
+	</bean>
+	<bean class="buy.BuyController">
+		<property name="buyDAO" ref="buyDAO"/>
+	</bean>
+	<bean class="recipe.RecipeController">
+		<property name="recipeDAO" ref="recipeDAO"/>
+	</bean>
+	<bean class="sale.SaleController">
+		<property name="saleDAO" ref="saleDAO"/>
+	</bean>
+</beans>
