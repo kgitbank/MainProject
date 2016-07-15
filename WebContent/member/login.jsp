@@ -1,25 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!-- login.jsp-->
-<script type="text/javascript">
-	function loginCheck(){
-		if (f.id.value==""){
-			alert("아이디를 입력하세요!!");
-			f.id.focus();
-			return;
-		}
-		if (f.pwd.value==""){
-			alert("비밀번호를 입력하세요!!");
-			f.pwd.focus();
-			return;
-		}
-		document.f.submit();
-	}
-	function searchMember(mode){
-		window.open("<%=request.getContextPath()%>/login/search.jsp?mode="+mode,
-				"search", "width=540, height=300");
-	}
-</script>	
+	
 <link rel="stylesheet" type="text/css" href="../style.css">
 <%
 		Cookie[] cks = request.getCookies();
@@ -55,13 +37,13 @@
 <%		if (value==null){ %>			
 				<input type="text" name="m_id" tabindex="1">
 <%		}else{ %>
-				<input type="text"  name="m_id" value="<%=value%>" tabindex="1">
+				<input type="text"  name="m_id" value="${value}" tabindex="1">
 <%		} %>				
 			</td>
 			<td rowspan="2" width="30%" valign="middle">
 				<a href="javascript:loginCheck()">
-					<img src="<%=request.getContextPath()%>/img/bt_login.gif" border="0" alt="로그인"  tabindex="3">&nbsp;&nbsp;<br>
-				</a>
+					<img src="<%=request.getContextPath()%>/img/bt_login.gif" border="0" alt="로그인"  tabindex="3"></a>&nbsp;&nbsp;<br>
+					
 				<nobr>
 <%		if (value==null){ %>			
 				<input type="checkbox" name="saveId">
@@ -96,3 +78,22 @@
 		</tr>
 	</table>
 </form> 
+<script type="text/javascript">
+	function loginCheck(){
+		if (f.m_id.value==""){
+			alert("아이디를 입력하세요!!");
+			f.id.focus();
+			return;
+		}
+		if (f.m_pw.value==""){
+			alert("비밀번호를 입력하세요!!");
+			f.pw.focus();
+			return;
+		}
+		document.f.submit();
+	}
+	function searchMember(mode){
+		window.open("<%=request.getContextPath()%>/member/search.jsp?mode="+mode,
+				"search", "width=540, height=300");
+	}
+</script>

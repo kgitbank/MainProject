@@ -3,14 +3,14 @@
 
 <script type="text/javascript">
 	function check(){
-		if (f.id.value==""){
+		if (f.m_id.value==""){
 			alert("아이디를 입력하세요")
-			f.id.focus();
+			f.m_id.focus();
 			return;
 		}
-		if (!f.passwd.value){
+		if (!f.m_pw.value){
 			alert("비밀번호를 입력하세요")
-			f.passwd.focus();
+			f.m_pw.focus();
 			return;
 		}
 		document.f.submit();
@@ -21,16 +21,10 @@
 <br><br>
 </div>
 <div align="center">
-	<link rel="stylesheet" type="text/css" href="../style.css"> 
-	<body onload="f.name.focus()">
-		<form name="f" method="POST" action="memberInput.do">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/style.css"> 
+	<body onload="f.m_name.focus()">
+		<form name="f" method="POST" action="<%=request.getContextPath()%>/memberInput.do">
 			<table width="90%" align="center" class="outline">
-				<tr>
-					<td width="150" class="m3">이름</td>
-					<td class="m3">
-						<input type="text" name="m_name" class="box">
-					</td>
-				</tr>
 				<tr>
 					<td width="150" class="m3">아이디</td>
 					<td class="m3">
@@ -43,6 +37,15 @@
 						<input type="password" name="m_pw" class="box">
 					</td>
   				</tr>
+  
+				<tr>
+					<td width="150" class="m3">이름</td>
+					<td class="m3">
+						<input type="text" name="m_name" class="box">
+					</td>
+				</tr>
+
+
   				<tr>
 					<td width="150" class="m3">주민번호</td>
 					<td class="m3">

@@ -22,7 +22,8 @@
 				<tr>
 					<th>ÁÖ¹Î¹øÈ£</th>
 					<td><input type="text" name="m_ssn1" size="7" maxlength="6"> -
-					<input type="password" name="m_ssn2" size="7" maxlength="7"></td>
+					<input type="password" name="m_ssn2" size="7" maxlength="6"></td>
+					
 				</tr>
 				<br>
 				<tr>

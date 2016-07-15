@@ -3,7 +3,19 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/style.css">
 <html>
 <head>
-	<title>메인프로젝트</title>
+<%
+		String mbId = (String)session.getAttribute("mbId");
+		String mbName = (String)session.getAttribute("mbName");
+		boolean isLogin = false;
+		boolean isAdmin = false;
+		if (mbId == null || mbName == null){
+			isLogin = false;
+		}else if(mbId.equals("1")){
+			isAdmin = true;
+			isLogin = true;
+		}else isLogin = true;
+		 %>
+<title>메인프로젝트</title>
 	<script type="text/javascript">
 		function login(){
 			window.open("login.do", "login", "width=600, height=510")
@@ -15,7 +27,13 @@
 	<table width ="1200"  border ="0">
 			<tr align ="right" height ="50">
 				<td colspan ="2">
-							<a href="javascript:login()">로그인 </a> | 장바구니  |  <a href="buy_list.do">주문배송조회</a>  |  고객센터 | <a href="admin/main.jsp">관리자 메뉴</a>
+				<%if(isLogin){ %>
+					<a href="<%=request.getContextPath()%>/member/logout.jsp">로그아웃</a>
+				<% }else{ %><a href="javascript:login()">로그인 </a>
+					<% } %>	 | 장바구니  |  <a href="buy_list.do">주문배송조회</a>  |  고객센터 
+					<%if(isAdmin){ %>
+					 |  <a href="admin.do">관리자 메뉴</a>
+					 <%} %> 
 				</td>		
 			</tr>
 			<tr height ="115">
