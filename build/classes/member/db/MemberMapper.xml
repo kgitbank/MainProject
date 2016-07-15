@@ -17,13 +17,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values
 		(#{m_id},#{m_name}, #{m_pw},#{m_ssn},#{m_email},#{m_phone})
 	</insert> 
-<<<<<<< HEAD
-	
-	<select id="listMember" resultType="memberDTO">
-		select * from member
-	</select>
-=======
->>>>>>> branch 'master' of https://github.com/kgitbank/MainProject
 </mapper>
 
 

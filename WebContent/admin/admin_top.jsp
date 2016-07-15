@@ -22,7 +22,11 @@
 					<h3 class="menu" >
 						<a href="index.jsp" class="topMenu">메인</a> | 
 						매출관리 | 
+<<<<<<< HEAD
 						<a href="admin_member.do" class="topMenu">회원관리</a> | 
+=======
+						회원관리 | 
+>>>>>>> branch 'master' of https://github.com/kgitbank/MainProject
 						배송 관리| 
 						레시피 관리 | 
 						오반장 | 

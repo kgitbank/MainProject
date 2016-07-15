@@ -56,6 +56,7 @@ public class MemberManager {
 	  return chk;
   }
   
+<<<<<<< HEAD
   public static List listMember(){
 	  List memberList = null;
 	  SqlSession session = sqlMapper.openSession();
@@ -63,6 +64,15 @@ public class MemberManager {
 	  session.close();
 	  return memberList;
   }
+=======
+//  public static List listBoard(){
+//	  List boardList = null;
+//	  SqlSession session = sqlMapper.openSession();
+//	  boardList = session.selectList("listBoard");
+//	  session.close();
+//	  return boardList;
+//  }
+>>>>>>> branch 'master' of https://github.com/kgitbank/MainProject
 //
 //
 //  
